@@ -1,0 +1,666 @@
+<footer>
+  <div>Family ❤️ Love ❤️ Forever</div>
+
+  <div class="made-by">
+    MADE BY <strong>BILAL KHAN</strong> ❤️
+  </div>
+</footer>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Beautiful Future ❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff7fa;
+      color: #172554;
+      overflow-x: hidden;
+    }
+
+    /* CONFETTI */
+    .confetti {
+      position: fixed;
+      top: -20px;
+      width: 10px;
+      height: 15px;
+      z-index: 9999;
+      pointer-events: none;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px 20px;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          rgba(20, 30, 75, .55),
+          rgba(20, 30, 75, .7)
+        ),
+        url("a_vertical_poster_like_romantic_celebratory_fut.png");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      color: white;
+      z-index: 2;
+      animation: fadeUp 1.5s ease;
+    }
+
+    .small-title {
+      font-size: 18px;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-family: cursive;
+      font-size: clamp(45px, 9vw, 90px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      font-size: clamp(17px, 3vw, 22px);
+      line-height: 1.7;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      border-radius: 50px;
+      border: none;
+      background: #ff477e;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: .3s;
+      box-shadow: 0 8px 25px rgba(255, 71, 126, .35);
+    }
+
+    .btn:hover {
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    /* MAIN */
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .section h2 {
+      font-family: cursive;
+      font-size: clamp(32px, 7vw, 55px);
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .heart {
+      font-size: 45px;
+      animation: heartbeat 1.4s infinite;
+      margin-bottom: 15px;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.25);
+      }
+    }
+
+    /* CARDS */
+    .cards {
+      max-width: 1100px;
+      margin: 50px auto 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      padding: 35px 20px;
+      border-radius: 25px;
+      background: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card-icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* FUTURE SECTION */
+    .future {
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      color: white;
+
+      background:
+        linear-gradient(
+          rgba(10, 20, 55, .65),
+          rgba(10, 20, 55, .7)
+        ),
+        url("a_vertical_poster_like_romantic_celebratory_fut.png");
+
+      background-size: cover;
+      background-position: center bottom;
+    }
+
+    .future-content {
+      max-width: 850px;
+      margin: auto;
+      padding: 30px;
+    }
+
+    .future h2 {
+      font-family: cursive;
+      font-size: clamp(40px, 8vw, 70px);
+      margin-bottom: 25px;
+    }
+
+    .future p {
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    /* SURPRISE */
+    .surprise {
+      padding: 100px 20px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .surprise-message {
+      max-width: 650px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 25px;
+      background: #fff0f5;
+      display: none;
+      animation: fadeUp 1s ease;
+    }
+
+    .surprise-message.show {
+      display: block;
+    }
+
+    .surprise-message h3 {
+      font-family: cursive;
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .surprise-message p {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #101936;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+      font-family: cursive;
+      font-size: 20px;
+    }
+
+    /* FLOATING HEARTS */
+    .floating-heart {
+      position: fixed;
+      bottom: -30px;
+      font-size: 25px;
+      pointer-events: none;
+      animation: floatHeart 6s linear forwards;
+      z-index: 5;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) scale(.7);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-110vh) scale(1.4);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+
+      .hero {
+        min-height: 100svh;
+        padding: 25px 18px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section {
+        padding: 65px 18px;
+      }
+
+      .section h2 {
+        font-size: 38px;
+      }
+
+      .section p {
+        font-size: 16px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .card {
+        padding: 25px 12px;
+      }
+
+      .card-icon {
+        font-size: 35px;
+      }
+
+      .card h3 {
+        font-size: 18px;
+      }
+
+      .card p {
+        font-size: 13px;
+      }
+
+      .future {
+        min-height: 500px;
+      }
+
+      .future-content {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .future h2 {
+        font-size: 45px;
+      }
+
+      .future p {
+        font-size: 16px;
+      }
+
+      .btn {
+        padding: 13px 25px;
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="small-title">
+        ❤️ To My Future Family ❤️
+      </div>
+
+      <h1>
+        Our Beautiful<br>
+        Future Together
+      </h1>
+
+      <p>
+        May our future home always be filled with love,
+        happiness, laughter, good health and endless blessings.
+      </p>
+
+      <a href="#family" class="btn">
+        Our Future ❤️
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAMILY MESSAGE -->
+  <section class="section" id="family">
+
+    <div class="heart">❤️</div>
+
+    <h2>
+      My Future Family,
+      My Biggest Blessing
+    </h2>
+
+    <p>
+      I pray that our future is filled with love, peace,
+      happiness and success. May we always support each other,
+      face every challenge together and create beautiful
+      memories that we will remember forever.
+      <br><br>
+      You are my today, my tomorrow and my always. ❤️
+    </p>
+
+    <!-- CARDS -->
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-icon">❤️</div>
+        <h3>Love</h3>
+        <p>Always together, always and forever.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🏠</div>
+        <h3>Home</h3>
+        <p>A peaceful home filled with happiness.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">👨‍👩‍👧‍👦</div>
+        <h3>Family</h3>
+        <p>Our greatest blessing and biggest treasure.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">⭐</div>
+        <h3>Dreams</h3>
+        <p>Together we can achieve every dream.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FUTURE -->
+  <section class="future">
+
+    <div class="future-content">
+
+      <h2>
+        A Beautiful Future Awaits ❤️
+      </h2>
+
+      <p>
+        With you, I see a future full of love,
+        adventures, little feet running around,
+        family dinners, peaceful nights and
+        a home filled with happiness.
+        <br><br>
+        This is just the beginning of our story...
+        ❤️
+      </p>
+
+      <a href="#surprise" class="btn">
+        Together Always ❤️
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- SURPRISE -->
+  <section class="surprise" id="surprise">
+
+    <div class="heart">💖</div>
+
+    <h2>
+      One Little Promise
+    </h2>
+
+    <p>
+      Click the button for a special message.
+    </p>
+
+    <button class="btn" onclick="showSurprise()">
+      Open My Heart 💌
+    </button>
+
+    <div class="surprise-message" id="message">
+
+      <h3>
+        Our Family, Our Story ❤️
+      </h3>
+
+      <p>
+        No matter where life takes us,
+        I hope we always choose each other,
+        laugh together, grow together,
+        and build a beautiful family together.
+        <br><br>
+        May our future be brighter than our dreams.
+        <br><br>
+        <strong>
+          Family ❤️ Love ❤️ Forever
+        </strong>
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+    Family ❤️ Love ❤️ Forever
+  </footer>
+
+
+  <script>
+
+    /* CONFETTI COLORS */
+    const confettiColors = [
+      "#ff477e",
+      "#ffcf33",
+      "#5eead4",
+      "#60a5fa",
+      "#a855f7",
+      "#fb7185"
+    ];
+
+    function createConfetti(amount = 80) {
+
+      for (let i = 0; i < amount; i++) {
+
+        const confetti = document.createElement("div");
+
+        confetti.classList.add("confetti");
+
+        confetti.style.left =
+          Math.random() * 100 + "vw";
+
+        confetti.style.background =
+          confettiColors[
+            Math.floor(
+              Math.random() * confettiColors.length
+            )
+          ];
+
+        confetti.style.animationDuration =
+          (3 + Math.random() * 5) + "s";
+
+        confetti.style.animationDelay =
+          Math.random() * 2 + "s";
+
+        confetti.style.transform =
+          `rotate(${Math.random() * 360}deg)`;
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+          confetti.remove();
+        }, 9000);
+      }
+    }
+
+
+    /* START CONFETTI */
+    createConfetti(100);
+
+    setInterval(() => {
+      createConfetti(25);
+    }, 5000);
+
+
+    /* SURPRISE MESSAGE */
+    function showSurprise() {
+
+      const message =
+        document.getElementById("message");
+
+      message.classList.add("show");
+
+      createConfetti(150);
+
+      for (let i = 0; i < 25; i++) {
+        createHeart();
+      }
+
+      message.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }
+
+
+    /* FLOATING HEARTS */
+    function createHeart() {
+
+      const heart =
+        document.createElement("div");
+
+      heart.classList.add("floating-heart");
+
+      heart.innerHTML =
+        ["❤️", "💖", "💕", "💗", "💓"]
+        [Math.floor(Math.random() * 5)];
+
+      heart.style.left =
+        Math.random() * 100 + "vw";
+
+      heart.style.animationDuration =
+        (4 + Math.random() * 4) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 8000);
+    }
+
+
+    /* HEARTS EVERY FEW SECONDS */
+    setInterval(() => {
+      createHeart();
+    }, 1800);
+
+  </script>
+
+</body>
+</html>
